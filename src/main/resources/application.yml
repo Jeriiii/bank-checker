@@ -1,0 +1,11 @@
+# Datasource
+spring:
+  datasource:
+    url: jdbc:h2:file:~/test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+fio:
+  tokens:
+    rosmarinusCZ: zQNZcR1HT4eSIcSl1GLC1qguLCw2kIbUd7NrG4WBAgi7syR8Op7zpvKNHYlCAx92
