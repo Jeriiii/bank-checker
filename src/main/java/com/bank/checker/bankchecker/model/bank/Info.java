@@ -1,16 +1,12 @@
-package com.bank.checker.bankchecker.rest.model.fio;
+package com.bank.checker.bankchecker.model.bank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.ToString;
-import org.bouncycastle.asn1.ASN1UTCTime;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Info {
 
     private String accountId;
@@ -27,10 +23,8 @@ public class Info {
 
     private String closingBalance;
 
-    @JsonFormat(pattern = "yyyy-MM-ddZ")
     private LocalDate dateStart;
 
-    @JsonFormat(pattern = "yyyy-MM-ddZ")
     private LocalDate dateEnd;
 
     private String idFrom;

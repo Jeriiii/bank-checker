@@ -3,6 +3,7 @@ package com.bank.checker.bankchecker.service.mapper;
 import com.bank.checker.bankchecker.model.bank.Transaction;
 import com.bank.checker.bankchecker.model.bank.Transactions;
 import com.bank.checker.bankchecker.rest.model.fio.FioGetTransactionsResponse;
+import com.bank.checker.bankchecker.rest.model.fio.Info;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -25,6 +26,8 @@ public interface FioTranstactionsMapper {
     default List<Transaction> mapTransactions(List<com.bank.checker.bankchecker.rest.model.fio.Transaction> transaction) {
         return transaction.stream().map(this::mapTransaction).collect(Collectors.toList());
     }
+
+    com.bank.checker.bankchecker.model.bank.Info mapInfo(Info info);
 
     @Mappings({
         @Mapping(target = "id", source = "id.value"),

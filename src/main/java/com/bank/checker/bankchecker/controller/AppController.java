@@ -20,13 +20,14 @@ public class AppController {
     private FioTranstactionsMapper fioTranstactionsMapper;
 
     @GetMapping("/getTransactions")
-    public String getTransactions() {
+    public Transactions getTransactions() {
         log.info("getTransactions");
         FioGetTransactionsResponse fioGetTransactionsResponse = getTransactionsService.getAll();
         Transactions transactions = fioTranstactionsMapper.mapFioTransactionsToTransactions(fioGetTransactionsResponse);
 
         log.info(transactions.toString());
+        log.info("oooooooooooooooooooook");
 
-        return "ok";
+        return transactions;
     }
 }
