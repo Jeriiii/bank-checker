@@ -19,22 +19,3 @@ fio:
   url: https://www.fio.cz/ib_api/rest/
   tokens:
     rosmarinusCZ: zQNZcR1HT4eSIcSl1GLC1qguLCw2kIbUd7NrG4WBAgi7syR8Op7zpvKNHYlCAx92
-
-feign:
-  client:
-    config:
-      feignName:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: full
-
-logging:
-  level:
-    com:
-      bank:
-        checker:
-          bankchecker:
-            rest:
-              client:
-                fio:
-                  Fio: DEBUG

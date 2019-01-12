@@ -1,5 +1,6 @@
 package com.bank.checker.bankchecker.rest;
 
+import feign.Contract;
 import feign.Logger;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
