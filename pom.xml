@@ -20,6 +20,7 @@
 		<jackson.version>2.9.8</jackson.version>
 		<mapstruct.version>1.1.0.Final</mapstruct.version>
 		<maven.version>3.5.1</maven.version>
+		<dockerfile-maven-version>1.4.9</dockerfile-maven-version>
 	</properties>
 
 	<dependencies>
@@ -145,7 +146,29 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>com.spotify</groupId>-->
+				<!--<artifactId>dockerfile-maven-plugin</artifactId>-->
+				<!--<version>${dockerfile-maven-version}</version>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>default</id>-->
+						<!--<goals>-->
+							<!--<goal>build</goal>-->
+							<!--<goal>push</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+				<!--<configuration>-->
+					<!--<repository>spotify/foobar</repository>-->
+					<!--<tag>${project.version}</tag>-->
+					<!--<buildArgs>-->
+						<!--<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>-->
+					<!--</buildArgs>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
 		</plugins>
+		<finalName>bank-checker</finalName> <!-- name of the JAR file -->
 	</build>
 
 	<repositories>
