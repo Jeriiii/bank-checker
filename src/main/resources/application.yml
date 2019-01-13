@@ -10,11 +10,19 @@ management:
 # Datasource
 spring:
   datasource:
-    url: jdbc:h2:file:~/test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-
+    url: jdbc:mysql://127.0.0.1:3306/bank_checker?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat: #db pool configuration, more params here: https://tomcat.apache.org/tomcat-8.0-doc/jdbc-pool.html#Common_Attributes
+      maxActive: 100 #default 100
+      initialSize: 3 #default 10
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
 fio:
   url: https://www.fio.cz/ib_api/rest/
   tokens:
